@@ -1,0 +1,34 @@
+ /* ログイン名フォント調整 */
+b,strong{font-weight:bolder;font-size:28px;}
+small{font-size:80%}
+
+/* margin-left:250px から margin:0px 50px */
+@media (min-width:768px){body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .content-wrapper,body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-footer,body:not(.sidebar-mini-md):not(.sidebar-mini-xs):not(.layout-top-nav) .main-header{transition:margin-left .3s ease-in-out;margin:0px 50px;}}
+
+/* ログインボックスの位置 */
+.login-page,.register-page{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100vh;-ms-flex-pack:center;justify-content:center} 
+
+/* ログインボックスの幅 */
+.login-box,.register-box{width:360px}
+
+/* ログイン画面背景色 */
+.login-page, .register-page {
+    background-color: #ffffff;
+}
+
+/* 売上ポイント入力ボックスサイズ */
+.inbox-size{max-width:1000px;margin:6% auto;}
+
+/* 売上ポイント入力画面バックグラウンドカラー */
+.content-wrapper{background-color: #ffffff;}
+
+/* インプットボックスのマージン */
+.form-group{margin: 30px;}
+
+/* 入力画面のボタン・タグ色 */
+.card-info:not(.card-outline)>.card-header {
+    background-color: #007bff;
+}
+.btn-info {
+    background-color: #007bff;
+}

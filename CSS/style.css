@@ -12,9 +12,7 @@ small{font-size:80%}
 .login-box,.register-box{width:360px}
 
 /* ログイン画面背景色 */
-.login-page, .register-page {
-    background-color: #ffffff;
-}
+.login-page, .register-page {background-color: #ffffff;}
 
 /* 売上ポイント入力ボックスサイズ */
 .inbox-size{max-width:1000px;margin:6% auto;}
@@ -26,9 +24,5 @@ small{font-size:80%}
 .form-group{margin: 30px;}
 
 /* 入力画面のボタン・タグ色 */
-.card-info:not(.card-outline)>.card-header {
-    background-color: #007bff;
-}
-.btn-info {
-    background-color: #007bff;
-}
+.card-info:not(.card-outline)>.card-header {background-color: #007bff;}
+.btn-info {background-color: #007bff;}

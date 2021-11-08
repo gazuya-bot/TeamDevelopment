@@ -32,19 +32,24 @@ class MemberController extends Controller
 
         $request->validate([
             'club_name'=>'required|max:64',
-            'email'=>'required|max:254|unique:members',
-            'address'=>'required|max:64|unique:members',
-            'name'=>'required|max:64|unique:members',
-            'tel'=>'required|max:11|unique:members',
+            'email'=>'required|max:254|unique:members_lists',
+            'address'=>'required|max:64|unique:members_lists',
+            'name'=>'required|max:64|unique:members_lists',
+            'tel'=>'required|max:11|unique:members_lists',
         ]);
+
+        //$memo = isset($request->memo) ? $request->memo : "";
+        $fax = $request->fax ?? "";
+        $memo = $request->memo ?? "";
+        //$memo = 条件式 ? 式1 : 式2
 
         $member->club_name = $request->club_name;
         $member->email = $request->email;
         $member->address = $request->address;
         $member->name = $request->name;
         $member->tel = $request->tel;
-        $member->fax = $request->fax;
-        $member->memo = $request->memo;
+        $member->fax = $fax;
+        $member->memo = $memo;
 
         // $inputs = $request->all();
 

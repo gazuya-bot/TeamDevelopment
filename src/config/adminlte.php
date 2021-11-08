@@ -270,11 +270,11 @@ return [
             'submenu' => [
                 [
                     'text' => 'member_list',
-                    'url'  => 'http://127.0.0.1:8000/members/memberlist',
+                    'url'  => '../members/memberlist',
                 ],
                 [
                     'text'    => 'sign_up',
-                    'url'     => 'http://127.0.0.1:8000/members/sign_up',
+                    'url'     => '../members/sign_up',
                     // 'submenu' => [
                     //     [
                     //         'text' => 'level_two',
@@ -298,7 +298,7 @@ return [
                 ],
                 [
                     'text' => 'edit_delete',
-                    'url'  => 'http://127.0.0.1:8000/members/edit',
+                    'url'  => '../members/edit',
                 ],
             ],
         ],

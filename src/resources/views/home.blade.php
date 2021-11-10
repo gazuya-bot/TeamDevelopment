@@ -5,11 +5,11 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @stop
-@section('title', 'Dashboard')
+@section('title', 'ホーム')
 
-@section('page_name','ホーム画面')
+@section('page_name','ホーム')
 @section('content_header')
-<h1>HOME</h1>
+<h1>ホーム</h1>
 @stop
 
 @section('content')

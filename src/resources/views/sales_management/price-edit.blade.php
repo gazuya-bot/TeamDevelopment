@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
-@section('page_name','売上編集画面')
+@section('title', '売上編集')
+@section('page_name','売上編集')
 @section('content')
 <!-- <div class="container-fluid"> -->
 <!-- <div class="row"> -->

@@ -6,8 +6,8 @@
 <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
 @stop
 
-@section('title', 'Dashboard')
-@section('page_name','売上管理画面')
+@section('title', '売上管理')
+@section('page_name','売上管理')
 @section('content')
 
 

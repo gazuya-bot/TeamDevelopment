@@ -34,25 +34,29 @@ class PointSaleController extends Controller
      */
     public function show_analysis()
     {
+        $year =date('Y');
+        $Nextyear = $year+1;
+
+        $months = [
+            $year."-04",
+            $year."-05",
+            $year."-06",
+            $year."-07",
+            $year."-08",
+            $year."-09",
+            $year."-10",
+            $year."-11",
+            $year."-12",
+            $Nextyear."-01",
+            $Nextyear."-02",
+            $Nextyear."-03"
+        ];
+
         // 売上一覧を取得
-        $points = $this->get_sales_list();
+        $points = $this->get_sales_list($year,$Nextyear);
 
         $sum_sales = [];
 
-        $months = [
-            "2021-04",
-            "2021-05",
-            "2021-06",
-            "2021-07",
-            "2021-08",
-            "2021-09",
-            "2021-10",
-            "2021-11",
-            "2021-12",
-            "2022-01",
-            "2022-02",
-            "2022-03"
-        ];
         foreach ($months as $month) {
             $sum = $this->get_month_sales($month);
             $sum_sales[] = $sum;
@@ -102,27 +106,33 @@ class PointSaleController extends Controller
      */
     public function show_analysis_id($id)
     {
+        
+
+        $year =date('Y');
+        $Nextyear = $year+1;
+
+        $months = [
+            $year."-04",
+            $year."-05",
+            $year."-06",
+            $year."-07",
+            $year."-08",
+            $year."-09",
+            $year."-10",
+            $year."-11",
+            $year."-12",
+            $Nextyear."-01",
+            $Nextyear."-02",
+            $Nextyear."-03"
+        ];
+
+
         // 売上一覧を取得
         
-        $points = $this->get_sale_list($id);
-    
+        $points = $this->get_sale_list($id,$year,$Nextyear);
 
         $sum_sales = [];
 
-        $months = [
-            "2021-04",
-            "2021-05",
-            "2021-06",
-            "2021-07",
-            "2021-08",
-            "2021-09",
-            "2021-10",
-            "2021-11",
-            "2021-12",
-            "2022-01",
-            "2022-02",
-            "2022-03"
-        ];
         foreach ($months as $month) {
             $sum = $this->get_month_sale_mem($month,$id);
             $sum_sales[] = $sum;
@@ -155,14 +165,17 @@ class PointSaleController extends Controller
 
        // 顧客名一覧を取得
         $members_lists = $this->get_members_list();
-    
+
+        $member_name = $this->get_member_name($id);
+
         return view('sales_management.analysis', compact(
             'points',
             'label',
             'sum_sales',
             'category_name',
             'category_item',
-            'members_lists'
+            'members_lists',
+            'member_name'
         ));
 
     
@@ -273,7 +286,7 @@ class PointSaleController extends Controller
      */
     public function get_month_sale_mem($month,$id)
     {
-
+        
         $record = DB::table('points')
             ->join('members_lists', 'points.member_id', '=', 'members_lists.id')
             ->where("date", "like", $month . "%")
@@ -327,12 +340,14 @@ class PointSaleController extends Controller
     /**
      * 売上一覧データ取得
      */
-    public function get_sales_list()
+    public function get_sales_list($year,$Nextyear)
     {
         $points = DB::table('points')
             ->join('members_lists', 'points.member_id', '=', 'members_lists.id')
             ->join('item_categories', 'points.category_id', '=', 'item_categories.id')
             ->select('points.*', 'members_lists.club_name', 'item_categories.category_name')
+            ->where("date", "like", $year . "%")
+            ->orWhere("date", "like", $Nextyear . "%")
             ->get();
 
         return $points;
@@ -343,13 +358,15 @@ class PointSaleController extends Controller
     /**
      * 売上一覧データ取得（顧客別）
      */
-    public function get_sale_list($id)
+    public function get_sale_list($id,$year,$Nextyear)
     {
         $points = DB::table('points')
             ->join('members_lists', 'points.member_id', '=', 'members_lists.id')
             ->join('item_categories', 'points.category_id', '=', 'item_categories.id')
             ->select('points.*', 'members_lists.club_name', 'item_categories.category_name')
             ->where('members_lists.id', $id)
+            ->where("date", "like", $year . "%")
+            ->orWhere("date", "like", $Nextyear . "%")
             ->get();
 
         return $points;
@@ -386,6 +403,15 @@ class PointSaleController extends Controller
             ->get();
 
         return $members_lists;
+    }
+
+    public function get_member_name($id){
+        $member_name = DB::table('members_lists')
+        ->select('club_name')
+        ->where('id',$id)
+        ->first();
+
+        return $member_name;
     }
 
 

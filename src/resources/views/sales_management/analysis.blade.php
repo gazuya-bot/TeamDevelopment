@@ -4,10 +4,14 @@
 <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 @stop
 
 @section('title', '売上管理')
 @section('page_name','売上管理')
+@section('content_header')
+<h6 style="text-align: center;"><?php if (isset($member_name)){ echo $member_name->club_name;}else{echo '全て';}?></h6>
+@stop
 @section('content')
 
 
@@ -37,8 +41,13 @@
 </script>
 @endif
 
+
+
+
 <div class="row">
+    
     <div class="col-6">
+
         <!-- BAR CHART -->
         <div class="card-body">
             <div class="card-header">
@@ -86,11 +95,11 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <div class="dropdown">
-                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
                         選択してください
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{{url('/sales_management')}}">全て</a>
+                    <a class="dropdown-item" href="{{url('/sales_management')}}" aria-selected="true">全て</a>
                         @foreach($members_lists as $members_list)
                         <a class="dropdown-item" href="{{url('/sales_management',$members_list->id)}}">{{ $members_list->club_name }}</a>
                         @endforeach

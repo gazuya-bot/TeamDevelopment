@@ -296,10 +296,10 @@ return [
                     //     ],
                     // ],
                 ],
-                [
-                    'text' => 'edit_delete',
-                    'url'  => '../members/edit',
-                ],
+                // [
+                //     'text' => 'edit_delete',
+                //     'url'  => '../members/edit',
+                // ],
             ],
         ],
         [

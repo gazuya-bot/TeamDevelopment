@@ -237,32 +237,9 @@ return [
         ],
 
         [
-<<<<<<< HEAD
             'text' => 'uriage',
             'url'  => 'admin/settings',
             'icon' => 'nav-icon fas fa-clipboard',
-=======
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        // [
-        //     'text'        => 'pages',
-        //     'url'         => 'admin/pages',
-        //     'icon'        => 'far fa-fw fa-file',
-        //     'label'       => 4,
-        //     'label_color' => 'success',
-        // ],
-        // ['header' => 'account_settings'],
-        [
-            'text' => 'sales_point',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-clipboard',
->>>>>>> ad374712154cfee378b0f43a83383d31f17f12a0
         ],
         // [
         //     'text' => 'uriage_kannri',
@@ -270,7 +247,6 @@ return [
         //     'icon' => 'nav-icon fas fa-clipboard-list',
         // ],
         [
-<<<<<<< HEAD
             'text'    => 'uriage-kanri',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -281,51 +257,9 @@ return [
                 [
                     'text' => 'level_two_01',
                     'url'  => '#',
-=======
-            'text' => 'customer_management',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-clipboard-list',
-        ],
-        [
-            'text'    => 'customer_management',
-            'icon'    => 'fas fa-chart-pie',
-            'submenu' => [
-                [
-                    'text' => 'member_list',
-                    'url'  => '../members/memberlist',
                 ],
-                [
-                    'text'    => 'sign_up',
-                    'url'     => '../members/sign_up',
-                    // 'submenu' => [
-                    //     [
-                    //         'text' => 'level_two',
-                    //         'url'  => '#',
-                    //     ],
-                    //     [
-                    //         'text'    => 'level_two',
-                    //         'url'     => '#',
-                    //         'submenu' => [
-                    //             [
-                    //                 'text' => 'level_three',
-                    //                 'url'  => '#',
-                    //             ],
-                    //             [
-                    //                 'text' => 'level_three',
-                    //                 'url'  => '#',
-                    //             ],
-                    //         ],
-                    //     ],
-                    // ],
->>>>>>> ad374712154cfee378b0f43a83383d31f17f12a0
-                ],
-                // [
-                //     'text' => 'edit_delete',
-                //     'url'  => '../members/edit',
-                // ],
             ],
         ],
-<<<<<<< HEAD
         [
             'text'    => 'hanbai_kanri',
             'icon'    => 'fas fa-fw fa-share',
@@ -344,29 +278,7 @@ return [
             'text' => 'log_out',
             'url'  => 'admin/settings',
             'icon' => 'nav-icon fas fa-sign-out-alt',
-=======
-        [
-            'text' => 'logout',
-            'url'  => '#',
-            'icon' => 'fas fa-sign-out-alt',
->>>>>>> ad374712154cfee378b0f43a83383d31f17f12a0
         ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'cyan',
-        //     'url'        => '#',
-        // ],
     ],
 
     /*

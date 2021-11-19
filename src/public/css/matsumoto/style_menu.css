@@ -1,0 +1,26 @@
+
+/* ヘッダー下 */
+/* .content {margin: 20px auto;}
+.content-header{padding: 5px .5rem;} */
+
+
+/* トップヘッダー背景色 */
+.main-header{background-color:#343a40;}
+
+/* トップヘッダー文字色 */
+a.nav-link{color: #fff !important;font-size: 18px;}
+
+/* ロゴ調整 */
+.main-sidebar img{width: 50px;margin: 7px 0 0 5px;}
+
+/* メインコンテンツ位置調整 */
+.card-primary{margin-top: 10px;}
+
+/* テキストエリアのサイズ変更不可 */
+textarea{resize: none;}
+
+/* フッター位置調整 */
+footer{text-align:center;}
+
+
+

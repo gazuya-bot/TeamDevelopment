@@ -1,0 +1,103 @@
+/**
+ベースメニューのスタイル 
+**/
+
+/* トップヘッダー背景色 */
+.main-header{background-color:#343a40;}
+
+/* トップヘッダー文字色 */
+a.nav-link{color: #fff !important;font-size: 18px;}
+
+/* ロゴ調整 */
+.main-sidebar img{width: 50px;margin: 7px 0 0 5px;}
+
+/* メインコンテンツ位置調整 */
+.card-primary{margin-top: 10px;}
+
+/* テキストエリアのサイズ変更不可 */
+textarea{resize: none;}
+
+/* フッター位置調整 */
+footer{text-align:center;}
+
+
+/* ログイン名フォント調整 */
+b,strong{font-weight:bolder;font-size:28px;}
+small{font-size:80%}
+
+/* ログインボックスの位置 */
+.login-page,.register-page{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100vh;-ms-flex-pack:center;justify-content:center} 
+
+/* ログインボックスの幅 */
+.login-box,.register-box{width:360px}
+
+/* ログイン画面背景色 */
+.login-page, .register-page {background-color: #ffffff !important;}
+
+/* ログインアイコン */
+.login-logo img{width: 180px;}
+
+/* 売上ポイント入力ボックスサイズ */
+.inbox-size{max-width:1300px;margin:6% auto;}
+
+/* 売上ポイント入力画面バックグラウンドカラー */
+.content-wrapper{background-color: #ffffff;}
+
+/* インプットボックスのマージン */
+.form-group{margin-bottom: 50px;}
+
+/* 入力画面のボタン・タグ色 */
+.card-info:not(.card-outline)>.card-header {background-color: #007bff;}
+.btn-info {background-color: #007bff;}
+
+/* パスワード記憶 */
+.form-check {text-align: center;}
+
+/* ログイン入力ボックスマージン調整 */
+.input-group {margin-top: 30px!important;}
+
+.re-p {margin-top: 10px;}
+
+ログイン・会員登録リンク
+a.nav-link{color: #000 !important;}
+
+a.nav-link {color: #007bff !important;font-size: 18px;}
+
+/* 会員登録ボタン */
+.signup-btn{margin-top: 30px;}
+
+ul.nav-item {list-style: none!important;}
+
+/* 販売ポイント入力画面調整 */
+.sidebar-mini{display: block;} 
+
+a.side-link{color: #ffffff!important;}
+
+.card{box-shadow: none;}
+
+/* .card-footer{background-color: #ffffff!important;} */
+
+
+.card-body{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.short-link{padding-top: 7px;}
+
+
+
+/* フッター下非表示 */
+.sidebar-mini main{display: none;}
+
+.sidebar-mini .container{display: none;}
+
+
+b, strong {
+    font-size: 15px;
+}
+
+.content-wrapper {background-color: #ffffff};
+
+.card-footer {background-color: #ffffff!important;}
+

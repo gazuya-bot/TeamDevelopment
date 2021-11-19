@@ -1,19 +1,12 @@
 <?php
 
 return [
-
-    'main_navigation'               => 'メインメニュー',
-    'blog'                          => 'ブログ',
-    'pages'                         => 'ページ',
-    'account_settings'              => 'アカウント設定',
-    'profile'                       => 'プロフィール',
-    'change_password'               => 'パスワード変更',
-    'multilevel'                    => 'マルチ階層',
-    'level_one'                     => '階層 1',
-    'level_two'                     => '階層 2',
-    'level_three'                   => '階層 3',
-    'labels'                        => 'ラベル',
-    'important'                     => '重要',
-    'warning'                       => '警告',
-    'information'                   => 'インフォメーション',
+    'uriage'                       => '売上ポイント登録',
+    'uriage_kanri'               => '売上管理',
+    'level_one_00'                     => '編集',
+    'level_two_01'                     => '削除',
+    'hanbai_kanri'                    => '販売管理',
+    'level_one_02'                     => '新規登録',
+    'level_two_03'                     => '編集・削除',
+    'log_out'                     => 'ログアウト',
 ];

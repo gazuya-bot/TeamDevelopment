@@ -53,8 +53,7 @@ class PointSaleController extends Controller
         ];
 
         // 売上一覧を取得
-        $points = $this->get_sales_list($year,$Nextyear);
-
+        $points = $this->get_sales_list($year,$Nextyear);       
         $sum_sales = [];
 
         foreach ($months as $month) {
@@ -78,14 +77,6 @@ class PointSaleController extends Controller
         ];
 
 
-        $category_ids = $this->get_item_categories();
-
-        foreach ($category_ids as $category_id_1) {
-            $category_id = $category_id_1->id;
-            $category_name[$category_id] = $category_id_1->category_name;
-            $category_item[$category_id] = $this->get_category_count($category_id);
-        }
-
        // 顧客名一覧を取得
         $members_lists = $this->get_members_list();
     
@@ -93,8 +84,6 @@ class PointSaleController extends Controller
             'points' => $points,
             'label' => $label,
             'sum_sales' => $sum_sales,
-            'category_name' => $category_name,
-            'category_item' => $category_item,
             'members_lists' => $members_lists
         ]);
 
@@ -155,13 +144,6 @@ class PointSaleController extends Controller
         ];
 
 
-        $category_ids = $this->get_item_categories();
-
-        foreach ($category_ids as $category_id_1) {
-            $category_id = $category_id_1->id;
-            $category_name[$category_id] = $category_id_1->category_name;
-            $category_item[$category_id] = $this->get_category_count_mem($category_id,$id);
-        }
 
        // 顧客名一覧を取得
         $members_lists = $this->get_members_list();
@@ -172,8 +154,6 @@ class PointSaleController extends Controller
             'points',
             'label',
             'sum_sales',
-            'category_name',
-            'category_item',
             'members_lists',
             'member_name'
         ));
@@ -195,13 +175,11 @@ class PointSaleController extends Controller
         // 顧客名一覧を取得
         $members_lists = $this->get_members_list();
 
-        // 商品カテゴリーを取得
-        $item_categories = $this->get_item_categories();
 
 
-
-        return view('sales_management.price-edit', ['point' => $point, 'item_categories' => $item_categories, 'members_lists' => $members_lists]);
+        return view('sales_management.price-edit', ['point' => $point, 'members_lists' => $members_lists]);
     }
+
 
     /**
      * 売上を更新
@@ -210,15 +188,15 @@ class PointSaleController extends Controller
     {
         // 更新日時の取得
         $updated_at = new Carbon('now');
-
+        $sale = $request->sale;
+        $pay_point = $request->pay_point;
         // 該当データの取得
         $point = Point_sale::find($id);
 
-        $point->member_id = $request->member_id;
-        $point->category_id = $request->category_id;
-        $point->date = $request->date;
-        $point->sale = $request->sale;
-        $point->get_point = $request->get_point;
+        $point->members_id = $request->members_id;
+        $point->sale = $sale-$pay_point;
+        $point->pay_point = $pay_point;
+        $point->get_point = floor(($sale - $pay_point)*0.01);
         $point->updated_at = $updated_at;
 
         // 更新する
@@ -249,7 +227,10 @@ class PointSaleController extends Controller
     {
         $point =  Point_sale::find($id);
 
-        $point->delete();
+        //$point->delete();
+        $point->is_delete = 'deleted';
+        $point->save();
+
 
         return redirect(route('show_analysis'))->with('flashmessage', '削除しました');
     }
@@ -266,7 +247,8 @@ class PointSaleController extends Controller
     {
 
         $record = DB::table('points')
-            ->where("date", "like", $month . "%")
+            ->where("points.created_at", "like", $month . "%")
+            ->where('is_delete','=','active')
             ->get();
 
         $count = $record->count();
@@ -288,9 +270,10 @@ class PointSaleController extends Controller
     {
         
         $record = DB::table('points')
-            ->join('members_lists', 'points.member_id', '=', 'members_lists.id')
-            ->where("date", "like", $month . "%")
+            ->join('members_lists', 'points.members_id', '=', 'members_lists.id')
+            ->where("points.created_at", "like", $month . "%")
             ->where('members_lists.id', $id)
+            ->where('is_delete','=','active')
             ->get();
 
         
@@ -304,19 +287,6 @@ class PointSaleController extends Controller
         return $sum;
     }
 
-    public function get_count_category($category_id)
-    {
-    
-        $category = DB::table('points')
-            ->where('category_id', '=', $category_id->id)
-            ->get();
-
-        $count = $category->count();
-
-        return $count;
-    }
-
-
 
     /**
      * 顧客名と保有ポイント取得
@@ -327,8 +297,9 @@ class PointSaleController extends Controller
     {
 
         $points = DB::table('points')
-            ->join('members_lists', 'points.member_id', '=', 'members_lists.id')
+            ->join('members_lists', 'points.members_id', '=', 'members_lists.id')
             ->select('members_lists.club_name', DB::raw("sum(points.get_point) as total_points"))
+            ->where('is_delete','=','active')
             ->groupBy('members_lists.id')
             ->get();
 
@@ -343,11 +314,11 @@ class PointSaleController extends Controller
     public function get_sales_list($year,$Nextyear)
     {
         $points = DB::table('points')
-            ->join('members_lists', 'points.member_id', '=', 'members_lists.id')
-            ->join('item_categories', 'points.category_id', '=', 'item_categories.id')
-            ->select('points.*', 'members_lists.club_name', 'item_categories.category_name')
-            ->where("date", "like", $year . "%")
-            ->orWhere("date", "like", $Nextyear . "%")
+            ->join('members_lists', 'points.members_id', '=', 'members_lists.id')
+            ->select('points.*', 'members_lists.club_name')
+            ->where('is_delete','=','active')
+            ->where("points.created_at", "like", $year . "%")
+            ->orWhere("points.created_at", "like", $Nextyear . "%")
             ->get();
 
         return $points;
@@ -361,12 +332,12 @@ class PointSaleController extends Controller
     public function get_sale_list($id,$year,$Nextyear)
     {
         $points = DB::table('points')
-            ->join('members_lists', 'points.member_id', '=', 'members_lists.id')
-            ->join('item_categories', 'points.category_id', '=', 'item_categories.id')
-            ->select('points.*', 'members_lists.club_name', 'item_categories.category_name')
+            ->join('members_lists', 'points.members_id', '=', 'members_lists.id')
+            ->select('points.*', 'members_lists.club_name')
+            ->where('is_delete','=','active')
             ->where('members_lists.id', $id)
-            ->where("date", "like", $year . "%")
-            ->orWhere("date", "like", $Nextyear . "%")
+            ->where("points.created_at", "like", $year . "%")
+            ->orWhere("points.created_at", "like", $Nextyear . "%")
             ->get();
 
         return $points;
@@ -380,10 +351,10 @@ class PointSaleController extends Controller
     public function get_sale_data($id)
     {
         $point = DB::table('points')
-            ->join('members_lists', 'points.member_id', '=', 'members_lists.id')
-            ->join('item_categories', 'points.category_id', '=', 'item_categories.id')
-            ->select('points.*', 'members_lists.club_name', 'category_name')
+            ->join('members_lists', 'points.members_id', '=', 'members_lists.id')
+            ->select('points.*', 'members_lists.club_name', )
             ->where('points.id', $id)
+            ->where('is_delete','=','active')
             ->first();
 
         return $point;
@@ -414,49 +385,6 @@ class PointSaleController extends Controller
         return $member_name;
     }
 
-
-
-    /**
-     * 商品カテゴリーを取得
-     */
-    public function get_item_categories()
-    {
-        $item_categories = DB::table('item_categories')
-            ->select('*')
-            ->get();
-
-        return $item_categories;
-    }
-
-
-
-    /**
-     * 商品カテゴリーを集計
-     */
-    public function get_category_count($category_id)
-    {
-        $category_count =  DB::table('points')
-        ->where('category_id','=',$category_id)
-        ->count();
-
-        return $category_count;
-    }
-
-
-
-    /**
-     * 商品カテゴリーを集計（顧客別）
-     */
-    public function get_category_count_mem($category_id,$id)
-    {
-        $category_count =  DB::table('points')
-        ->join('members_lists', 'points.member_id', '=', 'members_lists.id')
-        ->where('category_id','=',$category_id)
-        ->where('members_lists.id', $id)
-        ->count();
-
-        return $category_count;
-    }
 
     
 }

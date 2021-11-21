@@ -18,30 +18,21 @@
 
                 <div class="card-body">
                     <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">学校名/部活名</label>
+                        <label  class="col-sm-2 col-form-label">学校名/部活名</label>
                         <p class="form-control col-3">{{ $point->club_name }}</p>
                     </div>
-                    <div class="form-group row ">
-                        <label for="date" class="col-sm-2 col-form-label">日時</label>
-                        <p class="form-control col-3">{{ $point->date }}</p>
-                    </div>
                     <div class="form-group row">
-                        <label for="exampleInputEmail1" class="col-sm-2 col-form-label">売上</label>
+                        <label  class="col-sm-2 col-form-label">売上</label>
                         <p class="form-control col-10">{{ $point->sale }}</p>
                     </div>
                     <div class="form-group row">
-                        <label for="exampleInputEmail1" class="col-sm-2 col-form-label">利用ポイント</label>
-                        <p class="form-control col-10">0</p>
+                        <label  class="col-sm-2 col-form-label">支払いポイント</label>
+                        <p class="form-control col-10">{{ $point->pay_point }}</p>
                     </div>
                     
                     <div class="form-group row">
-                        <label for="exampleInputEmail1" class="col-sm-2 col-form-label">付与ポイント</label>
+                        <label  class="col-sm-2 col-form-label">付与ポイント</label>
                         <p class="form-control col-10">{{ $point->get_point }}</p>
-                    </div>
-                    
-                    <div class="form-group row">
-                        <label for="exampleInputPassword1" class="col-sm-2 col-form-label">商品カテゴリー</label>
-                        <p class="form-control col-3">{{ $point->category_name }}</p>
                     </div>
                     
                 </div>

@@ -9,12 +9,12 @@ class Point_sale extends Model
     protected $table = 'points';
 
     protected $fillable = [
+        'is_delete',
         'member_id',
-        'category_id',
         'date',
         'sale',
+        'pay_point',
         'get_point',
-        'delete_flag',
         'updated_at'
     ];
 

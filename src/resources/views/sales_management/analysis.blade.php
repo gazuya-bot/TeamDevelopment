@@ -46,7 +46,7 @@
 
 <div class="row">
     
-    <div class="col-6">
+    <div class="col-12">
 
         <!-- BAR CHART -->
         <div class="card-body">
@@ -60,30 +60,9 @@
                     <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
             </div>
-            <!-- /.card-body -->
         </div>
     </div>
 
-    <div class="col-6">
-        <!-- PIE CHART -->
-        <div class="card-body">
-            <div class="card-header">
-                <h3 class="card-title">購入商品のカテゴリー別の割合</h3>
-
-                
-            </div>
-            <div class="card-body">
-                <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-            </div>
-            <!-- /.card-body -->
-        </div>
-        <!-- /.card -->
-    </div>
-    <!-- /.col (LEFT) -->
-
-    <!-- /.row -->
-    <!-- /.container-fluid -->
-    </section>
     <!-- Main content -->
 
 
@@ -110,8 +89,8 @@
                         <tr>
                             <th>日付</th>
                             <th>顧客名</th>
-                            <th>商品カテゴリー</th>
                             <th>売上</th>
+                            <th>支払いポイント</th>
                             <th>獲得ポイント</th>
                             <th></th>
 
@@ -121,10 +100,9 @@
                     <tbody>
                         @foreach($points as $point)
                         <tr>
-                            <td>{{ $point->date }}</td>
                             <td>{{ $point->club_name }}</td>
-                            <td>{{ $point->category_name }}</td>
                             <td>{{ $point->sale }} 円</td>
+                            <td>{{ $point->pay_point }} pt</td>
                             <td>{{ $point->get_point }} pt</td>
 
                             <td>
@@ -145,15 +123,8 @@
             </div>
             <!-- /.card-body -->
         </div>
-        <!-- /.card -->
+        <!-- /.card-body -->
     </div>
-    <!-- /.col -->
-
-    <!-- /.row -->
-
-    <!-- /.container-fluid -->
-
-    <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
 
@@ -183,13 +154,6 @@
 
     var sum_sales = <?php echo json_encode($sum_sales); ?>;
 
-    var donutlabel = Object.values(<?php echo json_encode($category_name); ?>);
-
-    var count_category = Object.values(<?php echo json_encode($category_item); ?>);
-
-    var category_name = Object.values(donutlabel);
-
-    var category_count = Object.values(count_category);
 
 
 
@@ -230,19 +194,8 @@
         }]
     }
 
-    var donutData = {
-        labels: category_name,
-        // labels: ['ラケット','ユニフォーム','ボール','その他'],
-        datasets: [{
-            data: category_count,
-            //data: [100,80,30,20],
-            backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef'],
-        }]
-    }
-    var donutOptions = {
-        maintainAspectRatio: false,
-        responsive: true,
-    }
+
+
 
     //-------------
     //- BAR CHART -
@@ -266,22 +219,5 @@
         options: barChartOptions
     })
 
-    //-------------
-    //- PIE CHART -
-    //-------------
-    // Get context with jQuery - using jQuery's .get() method.
-    var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-    var pieData = donutData;
-    var pieOptions = {
-        maintainAspectRatio: false,
-        responsive: true,
-    }
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    new Chart(pieChartCanvas, {
-        type: 'pie',
-        data: pieData,
-        options: pieOptions
-    })
 </script>
 @stop

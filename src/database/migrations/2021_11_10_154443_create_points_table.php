@@ -15,12 +15,11 @@ class CreatePointsTable extends Migration
     {
         Schema::create('points', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->biginteger('member_id')->unsigned()->index();
-            $table->biginteger('category_id')->unsigned()->index();
-            $table->date("date"); 
+            $table->char('is_delete',20)->default("active");
+            $table->biginteger('members_id')->unsigned()->index();
             $table->unsignedInteger("sale");
+            $table->unsignedInteger("pay_point");
             $table->unsignedInteger("get_point");
-            $table->boolean('delete_flag')->default(0);
             $table->timestamps();
         });
     }

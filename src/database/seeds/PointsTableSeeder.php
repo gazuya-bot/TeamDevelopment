@@ -12,11 +12,11 @@ class PointsTableSeeder extends Seeder
     public function run()
     {
         DB::table('points')->insert([
-            'member_id' => '2',
-            'category_id' => '2',
-            'date' => '2021/010/10',
-            'sale' => '50000',
-            'get_point' => '500',
+            'members_id' => '2',
+            'is_delete' => 'active',
+            'sale' => '38000',
+            'pay_point' => '0',
+            'get_point' => '380',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
         ]);

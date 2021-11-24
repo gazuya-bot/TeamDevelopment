@@ -17,4 +17,12 @@ class Member_list extends Model
         'fax',
         'memo'
     ];
+
+
+    public $timestamps = false;
+
+    public function points()
+    {
+        return $this->hasMany('App\Models\Point_sale');
+    }
 }

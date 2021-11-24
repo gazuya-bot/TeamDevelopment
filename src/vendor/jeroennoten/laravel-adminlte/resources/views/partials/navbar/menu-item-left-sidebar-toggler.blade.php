@@ -13,3 +13,9 @@
         <span class="sr-only">{{ __('adminlte::adminlte.toggle_navigation') }}</span>
     </a>
 </li>
+
+<li class="nav-item">
+    <a class="nav-link" data-widget="pushmenu" href="#" role="button">
+        @yield('page_name')
+    </a>
+</li>

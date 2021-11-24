@@ -147,7 +147,10 @@ return [
 
     'attributes' => [
         'email' => 'メールアドレス',
-        'password' => 'パスワード'
+        'password' => 'パスワード',
+        'club_name' => '学校名/部活名',
+        'address' => '住所',
+        'tel' => '連絡先'
     ],
 
 ];

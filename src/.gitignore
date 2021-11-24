@@ -1,0 +1,8 @@
+.env
+/config/database
+.DS_Store
+node_modules/
+.editorconfig
+.env.example
+.gitattributes
+.styleci.yml

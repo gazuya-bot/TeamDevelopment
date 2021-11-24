@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>MOT</b>',
+    'logo_img' => '/img/mot_02.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -236,93 +236,49 @@ return [
             'topnav_right' => true,
         ],
 
-        // Sidebar items:
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'text' => 'uriage',
+            'url'  => 'admin/settings',
+            'icon' => 'nav-icon fas fa-clipboard',
         ],
         // [
-        //     'text'        => 'pages',
-        //     'url'         => 'admin/pages',
-        //     'icon'        => 'far fa-fw fa-file',
-        //     'label'       => 4,
-        //     'label_color' => 'success',
+        //     'text' => 'uriage_kannri',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'nav-icon fas fa-clipboard-list',
         // ],
-        // ['header' => 'account_settings'],
         [
-            'text' => 'sales_point',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-clipboard',
-        ],
-        [
-            'text' => 'sales_management',
-            'url'  => '../sales_management',
-            'icon' => 'fas fa-chart-pie',
-        ],
-        [
-            'text'    => 'customer_management',
-            'icon'    => 'fas fa-clipboard-list',
+            'text'    => 'uriage-kanri',
+            'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'member_list',
-                    'url'  => '../members/memberlist',
+                    'text' => 'level_one_00',
+                    'url'  => '#',
                 ],
                 [
-                    'text'    => 'sign_up',
-                    'url'     => '../members/sign_up',
-                    // 'submenu' => [
-                    //     [
-                    //         'text' => 'level_two',
-                    //         'url'  => '#',
-                    //     ],
-                    //     [
-                    //         'text'    => 'level_two',
-                    //         'url'     => '#',
-                    //         'submenu' => [
-                    //             [
-                    //                 'text' => 'level_three',
-                    //                 'url'  => '#',
-                    //             ],
-                    //             [
-                    //                 'text' => 'level_three',
-                    //                 'url'  => '#',
-                    //             ],
-                    //         ],
-                    //     ],
-                    // ],
-                ],
-                [
-                    'text' => 'edit_delete',
-                    'url'  => '../members/edit',
+                    'text' => 'level_two_01',
+                    'url'  => '#',
                 ],
             ],
         ],
         [
-            'text' => 'logout',
-            'url'  => '#',
-            'icon' => 'fas fa-sign-out-alt',
+            'text'    => 'hanbai_kanri',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'level_one_02',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'level_two_03',
+                    'url'  => '#',
+                ],
+            ],
         ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        //     'url'        => '#',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'cyan',
-        //     'url'        => '#',
-        // ],
+        [
+            'text' => 'log_out',
+            'url'  => 'admin/settings',
+            'icon' => 'nav-icon fas fa-sign-out-alt',
+        ],
     ],
 
     /*

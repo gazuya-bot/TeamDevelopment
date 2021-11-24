@@ -241,25 +241,25 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'nav-icon fas fa-clipboard',
         ],
-        // [
-        //     'text' => 'uriage_kannri',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'nav-icon fas fa-clipboard-list',
-        // ],
         [
-            'text'    => 'uriage-kanri',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one_00',
-                    'url'  => '#',
-                ],
-                [
-                    'text' => 'level_two_01',
-                    'url'  => '#',
-                ],
-            ],
+            'text' => 'uriage_kanri',
+            'url'  => 'admin/settings',
+            'icon' => 'nav-icon fas fa-clipboard',
         ],
+        // [
+        //     'text'    => 'uriage_kanri',
+        //     'icon'    => 'fas fa-fw fa-share',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'level_one_00',
+        //             'url'  => '#',
+        //         ],
+        //         [
+        //             'text' => 'level_two_01',
+        //             'url'  => '#',
+        //         ],
+        //     ],
+        // ],
         [
             'text'    => 'hanbai_kanri',
             'icon'    => 'fas fa-fw fa-share',

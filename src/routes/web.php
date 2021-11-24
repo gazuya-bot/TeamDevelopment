@@ -49,5 +49,3 @@ Route::get('/price_delete/{id}', 'PointSaleController@show_delete_price')->name(
 
 // 売上を削除
 Route::post('/price_exe_delete{id}', 'PointSaleController@exe_delete_price')->name('delete_price');
-
-

@@ -5,8 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Point;
 
+
 class MotController extends Controller
 {
+    public function inpoint()
+    {
+        return view('inpoint');
+    }
+
     public function add(Request $request)
     {
         $members = $request->members_id;
@@ -29,6 +35,7 @@ class MotController extends Controller
         $data = [
             'members_id'=>$members_id,
             'sale'=>$sale - $pay_point,
+            'pay_point'=>$pay_point,
             'get_point'=>($sale - $pay_point)*0.01,
             'created_at'=>date('Y-m-d H:i:s')
             // 'updated_at'=>date('Y-m-d H:i:s')

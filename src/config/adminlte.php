@@ -238,7 +238,7 @@ return [
 
         [
             'text' => 'uriage',
-            'url'  => 'admin/settings',
+            'url'  => '/inpoint',
             'icon' => 'nav-icon fas fa-clipboard',
         ],
         [

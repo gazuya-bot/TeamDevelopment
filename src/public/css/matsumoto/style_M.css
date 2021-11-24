@@ -29,7 +29,19 @@ small{font-size:80%}
 .login-page,.register-page{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100vh;-ms-flex-pack:center;justify-content:center} 
 
 /* ログインボックスの幅 */
-.login-box,.register-box{width:360px}
+/* .login-box,.register-box */
+.login-box,.register-box
+{
+    max-width:360px;
+    height: 500px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
 
 /* ログイン画面背景色 */
 .login-page, .register-page {background-color: #ffffff !important;}

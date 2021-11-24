@@ -12,13 +12,13 @@ use App\Http\Controllers\MemberController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 
-
+// 奥村
 Route::get('/members/memberlist','MemberController@members')->name('memberlist');
 Route::get('/members/sign_up','MemberController@sign_up')->name('sign_up');
 Route::post('/members/store','MemberController@store')->name('store');
@@ -49,3 +49,10 @@ Route::get('/price_delete/{id}', 'PointSaleController@show_delete_price')->name(
 
 // 売上を削除
 Route::post('/price_exe_delete{id}', 'PointSaleController@exe_delete_price')->name('delete_price');
+
+// 松本
+// ポイント登録
+Route::post('/point_add', 'MotController@add');
+
+// ポイント登録画面遷移
+Route::get('/inpoint', 'MotController@inpoint');

@@ -92,7 +92,6 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>日付</th>
                             <th>顧客名</th>
                             <th>売上</th>
                             <th>支払いポイント</th>

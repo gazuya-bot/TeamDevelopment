@@ -67,8 +67,9 @@ small{font-size:80%}
 
 .re-p {margin-top: 10px;}
 
-ログイン・会員登録リンク
-a.nav-link{color: #000 !important;}
+/* ログイン・会員登録リンク */
+a.new_member{color: #000 !important;}
+a.new_member:hover{color: rgb(45, 143, 255) !important;}
 
 a.nav-link {font-size: 18px;}
 
@@ -97,13 +98,18 @@ b, strong {
 
 .content-wrapper {background-color: #ffffff};
 
-/* バリデーションエラー表示 */
-/* p.error_message {color: #e74c3c!important;margin: 10px 0 0 0;} */
-/* p.error_message_in {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: red;
-} */
+/* メニュー選択時 */
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background-color: rgba(61, 60, 60, 0.9);
+    color: rgba(61, 60, 60, 0.9);
+}
+
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background-color: rgba(10, 125, 233, 0.5);
+}
+
 
 /* ボタン */
-.card-footer {background-color: #fff!important;}
+.card-footer:last-child {
+    background-color: #fff;
+}

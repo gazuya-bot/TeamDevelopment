@@ -237,6 +237,11 @@ return [
         ],
 
         [
+            'text' => 'home',
+            'url'  => '/home',
+            'icon' => 'nav-icon fas fa-clipboard',
+        ],
+        [
             'text' => 'uriage',
             'url'  => '/inpoint',
             'icon' => 'nav-icon fas fa-clipboard',

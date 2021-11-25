@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'home'                       => 'ホーム',
     'uriage'                       => '売上ポイント登録',
     'uriage_kanri'               => '売上管理',
     // 'level_one_00'                     => '編集',

@@ -56,11 +56,8 @@ small{font-size:80%}
 .content-wrapper{background-color: #ffffff;}
 
 /* インプットボックスのマージン */
-.form-group{margin-bottom: 50px;}
+.form-group{margin-bottom: 30px;}
 
-/* 入力画面のボタン・タグ色 */
-.card-info:not(.card-outline)>.card-header {background-color: #007bff;}
-.btn-info {background-color: #007bff;}
 
 /* パスワード記憶 */
 .form-check {text-align: center;}
@@ -73,43 +70,40 @@ small{font-size:80%}
 ログイン・会員登録リンク
 a.nav-link{color: #000 !important;}
 
-a.nav-link {color: #007bff !important;font-size: 18px;}
+a.nav-link {font-size: 18px;}
 
 /* 会員登録ボタン */
 .signup-btn{margin-top: 30px;}
 
 ul.nav-item {list-style: none!important;}
 
-/* 販売ポイント入力画面調整 */
-.sidebar-mini{display: block;} 
 
-a.side-link{color: #ffffff!important;}
+/* 販売ポイント入力画面調整 */
 
 .card{box-shadow: none;}
-
-/* .card-footer{background-color: #ffffff!important;} */
-
-
-.card-body{
-    margin-top: 0;
-    padding-top: 0;
-}
 
 .short-link{padding-top: 7px;}
 
 
-
 /* フッター下非表示 */
-.sidebar-mini main{display: none;}
+/* .sidebar-mini main{display: none;}
 
-.sidebar-mini .container{display: none;}
+.sidebar-mini .container{display: none;} */
 
 
 b, strong {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .content-wrapper {background-color: #ffffff};
 
-.card-footer {background-color: #ffffff!important;}
+/* バリデーションエラー表示 */
+/* p.error_message {color: #e74c3c!important;margin: 10px 0 0 0;} */
+/* p.error_message_in {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: red;
+} */
 
+/* ボタン */
+.card-footer {background-color: #fff!important;}

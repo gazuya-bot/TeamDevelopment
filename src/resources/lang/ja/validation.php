@@ -95,7 +95,7 @@ return [
     'numeric'              => ':attributeには、数字を指定してください。',
     'present'              => ':attributeが存在していません。',
     'regex'                => ':attributeに正しい形式を指定してください。',
-    'required'             => ':attributeは必ず指定してください。',
+    'required'             => ':attributeは必ず入力してください。',
     'required_if'          => ':otherが:valueの場合、:attributeも指定してください。',
     'required_unless'      => ':otherが:valuesでない場合、:attributeを指定してください。',
     'required_with'        => ':valuesを指定する場合は、:attributeも指定してください。',
@@ -150,7 +150,10 @@ return [
         'password' => 'パスワード',
         'club_name' => '学校名/部活名',
         'address' => '住所',
-        'tel' => '連絡先'
+        'tel' => '連絡先',
+        'members_id' => '※顧客名',
+        'sale' => '※売上金額',
+        'pay_point' => '※ポイント支払い',
     ],
 
 ];

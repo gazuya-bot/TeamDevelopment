@@ -1,13 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', '顧客一覧')
-
-@section('content_header')
-<div>
-    <h1>編集</h1>
-    <!-- <button class="btn btn-outline-primary" style="margin-left: 90%;"><a href="../HTML/sign-up.html">新規登録</a></button> -->
-</div>
+@section('css')
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{asset('css/matsumoto/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/matsumoto/style_M.css')}}">
 @stop
+
+@section('title', '顧客編集')
+
+@section('page_name','顧客編集')
+
+@section('content')
 
 
 @section('content')

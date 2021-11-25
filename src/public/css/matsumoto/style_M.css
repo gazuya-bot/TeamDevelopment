@@ -29,7 +29,19 @@ small{font-size:80%}
 .login-page,.register-page{-ms-flex-align:center;align-items:center;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;height:100vh;-ms-flex-pack:center;justify-content:center} 
 
 /* ログインボックスの幅 */
-.login-box,.register-box{width:360px}
+/* .login-box,.register-box */
+.login-box,.register-box
+{
+    max-width:360px;
+    height: 500px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
 
 /* ログイン画面背景色 */
 .login-page, .register-page {background-color: #ffffff !important;}
@@ -44,11 +56,8 @@ small{font-size:80%}
 .content-wrapper{background-color: #ffffff;}
 
 /* インプットボックスのマージン */
-.form-group{margin-bottom: 50px;}
+.form-group{margin-bottom: 30px;}
 
-/* 入力画面のボタン・タグ色 */
-.card-info:not(.card-outline)>.card-header {background-color: #007bff;}
-.btn-info {background-color: #007bff;}
 
 /* パスワード記憶 */
 .form-check {text-align: center;}
@@ -58,46 +67,49 @@ small{font-size:80%}
 
 .re-p {margin-top: 10px;}
 
-ログイン・会員登録リンク
-a.nav-link{color: #000 !important;}
+/* ログイン・会員登録リンク */
+a.new_member{color: #000 !important;}
+a.new_member:hover{color: rgb(45, 143, 255) !important;}
 
-a.nav-link {color: #007bff !important;font-size: 18px;}
+a.nav-link {font-size: 18px;}
 
 /* 会員登録ボタン */
 .signup-btn{margin-top: 30px;}
 
 ul.nav-item {list-style: none!important;}
 
-/* 販売ポイント入力画面調整 */
-.sidebar-mini{display: block;} 
 
-a.side-link{color: #ffffff!important;}
+/* 販売ポイント入力画面調整 */
 
 .card{box-shadow: none;}
-
-/* .card-footer{background-color: #ffffff!important;} */
-
-
-.card-body{
-    margin-top: 0;
-    padding-top: 0;
-}
 
 .short-link{padding-top: 7px;}
 
 
-
 /* フッター下非表示 */
-.sidebar-mini main{display: none;}
+/* .sidebar-mini main{display: none;}
 
-.sidebar-mini .container{display: none;}
+.sidebar-mini .container{display: none;} */
 
 
 b, strong {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .content-wrapper {background-color: #ffffff};
 
-.card-footer {background-color: #ffffff!important;}
+/* メニュー選択時 */
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background-color: rgba(61, 60, 60, 0.9);
+    color: rgba(61, 60, 60, 0.9);
+}
 
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
+    background-color: rgba(10, 125, 233, 0.5);
+}
+
+
+/* ボタン */
+.card-footer:last-child {
+    background-color: #fff;
+}

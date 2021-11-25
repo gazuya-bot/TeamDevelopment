@@ -12,15 +12,15 @@ use App\Http\Controllers\MemberController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
 
 
-
-Route::get('/members/memberlist','MemberController@members')->name('memberlist');
-Route::get('/members/sign_up','MemberController@sign_up')->name('sign_up');
+// 奥村
+Route::get('/members/memberlist','MemberController@members')->name('memberlist')->middleware('auth');
+Route::get('/members/sign_up','MemberController@sign_up')->name('sign_up')->middleware('auth');
 Route::post('/members/store','MemberController@store')->name('store');
 Route::get('/members/detail/{id}','MemberController@detail')->name('detail');
 Route::get('/members/edit/{id}','MemberController@edit')->name('edit');
@@ -29,11 +29,11 @@ Route::get('/members/delete/{id}','MemberController@delete')->name('delete');
 Route::any('/members/destroy/{id}','MemberController@destroy')->name('destroy');
 
 
-// ホーム画面
-Route::get('/home', 'PointSaleController@index')->name('home');
+// ホーム画面 OK
+Route::get('/home', 'PointSaleController@index')->name('home')->middleware('auth');
 
-// 売上分析画面
-Route::get('/sales_management', 'PointSaleController@show_analysis')->name('show_analysis');
+// 売上分析画面 OK
+Route::get('/sales_management', 'PointSaleController@show_analysis')->name('show_analysis')->middleware('auth');
 
 // 顧客別の売上分析画面
 Route::get('/sales_management/{id}', 'PointSaleController@show_analysis_id')->name('show_analysis_id');
@@ -49,3 +49,13 @@ Route::get('/price_delete/{id}', 'PointSaleController@show_delete_price')->name(
 
 // 売上を削除
 Route::post('/price_exe_delete{id}', 'PointSaleController@exe_delete_price')->name('delete_price');
+
+// 松本
+// ポイント登録 OK
+Route::post('/point_add', 'MotController@add')->middleware('auth');
+
+// ポイント登録画面遷移 OK
+Route::get('/inpoint', 'MotController@inpoint')->name('inpoint')->middleware('auth');
+
+// ログアウト OK
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

@@ -243,7 +243,7 @@ return [
         ],
         [
             'text' => 'uriage_kanri',
-            'url'  => 'admin/settings',
+            'url'  => '/sales_management',
             'icon' => 'nav-icon fas fa-clipboard',
         ],
         // [
@@ -266,17 +266,17 @@ return [
             'submenu' => [
                 [
                     'text' => 'level_one_02',
-                    'url'  => '#',
+                    'url'  => '/members/sign_up',
                 ],
                 [
                     'text' => 'level_two_03',
-                    'url'  => '#',
+                    'url'  => '/members/memberlist',
                 ],
             ],
         ],
         [
             'text' => 'log_out',
-            'url'  => 'admin/settings',
+            'url'  => '/logout',
             'icon' => 'nav-icon fas fa-sign-out-alt',
         ],
     ],

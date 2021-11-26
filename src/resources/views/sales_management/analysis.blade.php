@@ -92,8 +92,10 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
+                            <th>日時</th>
                             <th>顧客名</th>
                             <th>売上</th>
+                            <th>支払い金額</th>
                             <th>支払いポイント</th>
                             <th>獲得ポイント</th>
                             <th></th>
@@ -104,8 +106,10 @@
                     <tbody>
                         @foreach($points as $point)
                         <tr>
+                        <td>{{ $point->created_at }}</td>
                             <td>{{ $point->club_name }}</td>
                             <td>{{ $point->sale }} 円</td>
+                            <td>{{ $point->pay_cash }} 円</td>
                             <td>{{ $point->pay_point }} pt</td>
                             <td>{{ $point->get_point }} pt</td>
 

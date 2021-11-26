@@ -150,7 +150,14 @@ return [
         'password' => 'パスワード',
         'club_name' => '学校名/部活名',
         'address' => '住所',
+<<<<<<< Updated upstream
         'tel' => '連絡先'
+=======
+        'tel' => '連絡先',
+        'name' => '顧問名',
+        'sale' => '※売上金額',
+        'pay_point' => '※ポイント支払い',
+>>>>>>> Stashed changes
     ],
 
 ];

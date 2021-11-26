@@ -42,7 +42,11 @@
                                             {{ $member->club_name }}
                                         </td>
                                         <td>
+<<<<<<< Updated upstream
                                             {{ $member->updated_at }}
+=======
+                                            {{ $nsd[$member->id] }}
+>>>>>>> Stashed changes
                                         </td>
                                         <td>
                                             <button class="btn btn-outline-primary"><a href="{{ route('edit',['id'=>$member->id]) }}">{{ __('編集') }}</a></button>

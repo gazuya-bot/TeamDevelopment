@@ -47,7 +47,7 @@
                                             {{ $member->club_name }}
                                         </td>
                                         <td>
-                                            {{ $member->updated_at }}
+                                            {{ $member->created_at }}
                                         </td>
                                         <td>
                                             <button class="btn btn-outline-primary"><a href="{{ route('edit',['id'=>$member->id]) }}">{{ __('編集') }}</a></button>
@@ -55,103 +55,8 @@
                                         </td>
                                     </tr>
                                     @endforeach
-                                    <!-- <tr data-href="../HTML/detail.html">
-                                        <td>2</td>
-                                        <td>
-                                            テック中学校ソフトテニス部
-                                        </td>
-                                        <td>2012/9/24</td>
-                                        <td>
-                                            <button class="btn btn-outline-primary"><a href="../HTML/edit.html">編集</a></button>
-                                            <button class="btn btn-outline-danger"><a href=".../HTML/delete.html">削除</a></button>
-                                        </td>
-                                    </tr>
-                                    <tr data-href="../HTML/detail.html">
-                                        <td>3</td>
-                                        <td>
-                                            テック中学校ソフトテニス部
-                                        </td>
-                                        <td>2012/9/24</td>
-                                        <td>
-                                            <button class="btn btn-outline-primary"><a href="../HTML/edit.html">編集</a></button>
-                                            <button class="btn btn-outline-danger"><a href=".../HTML/delete.html">削除</a></button>
-                                        </td>
-                                    </tr>
-                                    <tr data-href="../HTML/detail.html">
-                                        <td>4</td>
-                                        <td>
-                                            テック中学校ソフトテニス部
-                                        </td>
-                                        <td>2012/9/24</td>
-                                        <td>
-                                            <button class="btn btn-outline-primary"><a href="../HTML/edit.html">編集</a></button>
-                                            <button class="btn btn-outline-danger"><a href=".../HTML/delete.html">削除</a></button>
-                                        </td>
-                                    </tr>
-                                    <tr data-href="../HTML/detail.html">
-                                        <td>5</td>
-                                        <td>
-                                            テック中学校ソフトテニス部
-                                        </td>
-                                        <td>2012/9/24</td>
-                                        <td>
-                                            <button class="btn btn-outline-primary"><a href="../HTML/edit.html">編集</a></button>
-                                            <button class="btn btn-outline-danger"><a href=".../HTML/delete.html">削除</a></button>
-                                        </td>
-                                    </tr>
-                                    <tr data-href="../HTML/detail.html">
-                                        <td>6</td>
-                                        <td>
-                                            テック中学校ソフトテニス部
-                                        </td>
-                                        <td>2012/9/24</td>
-                                        <td>
-                                            <button class="btn btn-outline-primary"><a href="../HTML/edit.html">編集</a></button>
-                                            <button class="btn btn-outline-danger"><a href=".../HTML/delete.html">削除</a></button>
-                                        </td>
-                                    </tr>
-                                    <tr data-href="../HTML/detail.html">
-                                        <td>7</td>
-                                        <td>
-                                            テック中学校ソフトテニス部
-                                        </td>
-                                        <td>2012/9/24</td>
-                                        <td>
-                                            <button class="btn btn-outline-primary"><a href="../HTML/edit.html">編集</a></button>
-                                            <button class="btn btn-outline-danger"><a href=".../HTML/delete.html">削除</a></button>
-                                        </td>
-                                    </tr>
-                                    <tr data-href="../HTML/detail.html">
-                                        <td>8</td>
-                                        <td>
-                                            テック中学校ソフトテニス部
-                                        </td>
-                                        <td>2012/9/24</td>
-                                        <td>
-                                            <button class="btn btn-outline-primary"><a href="../HTML/edit.html">編集</a></button>
-                                            <button class="btn btn-outline-danger"><a href=".../HTML/delete.html">削除</a></button>
-                                        </td>
-                                    </tr>
-                                    <tr data-href="../HTML/detail.html">
-                                        <td>9</td>
-                                        <td>
-                                            テック中学校ソフトテニス部
-                                        </td>
-                                        <td>2012/9/24</td>
-                                        <td>
-                                            <button class="btn btn-outline-primary"><a href="../HTML/edit.html">編集</a></button>
-                                            <button class="btn btn-outline-danger"><a href=".../HTML/delete.html">削除</a></button>
-                                        </td>
                                     </tr> -->
                                 </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>学校名 / 部活名</th>
-                                        <th>最終購入日</th>
-                                        <th></th>
-                                    </tr>
-                                </tfoot>
                             </table>
                         </div>            
                     </div>                           

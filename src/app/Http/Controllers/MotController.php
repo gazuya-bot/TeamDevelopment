@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Point;
 
+use App\Models\Member_list;
+
 
 class MotController extends Controller
 {
     public function inpoint()
     {
-        return view('inpoint');
+        $members = Member_list::orderby('id', 'asc')->get();
+        return view('inpoint', compact('members'));
     }
 
     public function add(Request $request)
@@ -27,20 +30,7 @@ class MotController extends Controller
                 'pay_point'=>'required|integer|numeric|lte:sale',
             ]);
 
-            $members = $request->members_id;
-
-            if($members == "A高校"){
-                $members_id = 1;
-            }elseif($members == "B高校"){
-                $members_id = 2;
-            }elseif($members == "C高校"){
-                $members_id = 3;
-            }elseif($members == "D高校"){
-                $members_id = 4;
-            }elseif($members == "E高校"){
-                $members_id = 5;
-            }
-
+            $members_id = $request->members_id;
             $sale = $request->sale;
             $pay_point = $request->pay_point;
 
@@ -54,11 +44,10 @@ class MotController extends Controller
             ];
             Point::insert($data);
 
-            return redirect('/inpoint');
+            return redirect('/inpoint')->with('flash_message', '登録が完了しました');;
 
         }
-    }
-    
+    }    
 }
 
 

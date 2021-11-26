@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{asset('css/matsumoto/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/matsumoto/style_M.css')}}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 @stop
 
 @section('title', '売上ポイント登録')
@@ -28,11 +32,10 @@
                                 <div class="col-sm-10">
                                 <select class="custom-select rounded-0" id="exampleSelectRounded0" name="members_id">
                                     <option></option>
-                                    <option value="A高校" @if(old('members_id')=="A高校")selected @endif>A高校</option>
-                                    <option value="B高校" @if(old('members_id')=="B高校")selected @endif>B高校</option>
-                                    <option value="C高校" @if(old('members_id')=="C高校")selected @endif>C高校</option>
-                                    <option value="D高校" @if(old('members_id')=="D高校")selected @endif>D高校</option>
-                                    <option value="E高校" @if(old('members_id')=="E高校")selected @endif>E高校</option>
+                                    @foreach($members as $member)
+                                        <option value={{ $member->id }} >{{ $member->club_name }}</option>
+                                        <!-- <option value="A高校" @if(old('members_id')=="A高校")selected @endif>D高校</option> -->
+                                    @endforeach
                                 </select>
                                 @if(!empty($errors->first('members_id')))
                                     <p class="error_message" style="color:red">{{ $errors->first('members_id') }}</p>
@@ -76,6 +79,21 @@
         </div>
     </div>
 </div>
+
+<!-- @if (session('flash_message'))
+    <div class="flash_message bg-success text-center py-3 my-0">
+        {{ session('flash_message') }}
+    </div>
+@endif -->
+
+<!-- フラッシュメッセージ -->
+<script>
+    @if (session('flash_message'))
+        $(function () {
+                toastr.success('{{ session('flash_message') }}');
+        });
+    @endif
+</script>
 
 @stop
 

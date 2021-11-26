@@ -23,18 +23,22 @@ class MemberController extends Controller
                 ->where('points.members_id', '=', $i)
                 ->select('points.created_at')
                 ->max('points.created_at');
-            }  
-            // dd($nsd);   
+            }
+            // dd($nsd);
         return view('members/memberlist', [
             'members' => $members,
             'nsd' => $nsd,
         ]);
 
-    }
-    //**新規登録 */
-    public function sign_up(Request $request)
-    {
-        return view('members/sign_up');
+    //     $members= DB::table('members_lists')->get();
+    //     return view('members/memberlist', [
+    //         'members' => $members,
+    //     ]);
+    // }
+    // //**新規登録 */
+    // public function sign_up(Request $request)
+    // {
+    //     return view('members/sign_up');
     }
     /**新規保存 */
     public function store(Request $request)
@@ -87,7 +91,7 @@ class MemberController extends Controller
         $member->save();
 
 
-        \Session::flash('flash_message', '顧客情報を登録しました！');
+        \Session::flash('err_msg', '顧客情報を登録しました！');
         return redirect()->route('memberlist');
 
     }

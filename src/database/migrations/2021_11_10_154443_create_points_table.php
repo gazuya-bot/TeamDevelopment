@@ -18,6 +18,7 @@ class CreatePointsTable extends Migration
             $table->char('is_delete',20)->default("active");
             $table->biginteger('members_id')->unsigned()->index();
             $table->unsignedInteger("sale");
+            $table->unsignedInteger("pay_cash");
             $table->unsignedInteger("pay_point");
             $table->unsignedInteger("get_point");
             $table->timestamps();

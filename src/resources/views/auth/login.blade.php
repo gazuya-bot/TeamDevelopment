@@ -85,7 +85,7 @@
                         <div class="col-12 form-check">
                             @guest
                                 @if (Route::has('register'))
-                                        <a class="nav-link" href="{{ route('register') }}">{{ __('会員登録はこちら!') }}</a>
+                                        <a class="nav-link new_member" href="{{ route('register') }}">{{ __('会員登録はこちら!') }}</a>
                                 @endif
                             @else
                                 <li class="nav-item dropdown" style="list-style: none;>

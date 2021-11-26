@@ -1,17 +1,22 @@
 @extends('adminlte::page')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-<link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-<link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
-<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <link rel="stylesheet" href="{{asset('css/matsumoto/adminlte.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/matsumoto/style_M.css')}}">
 @stop
 
 @section('title', '売上管理')
+
 @section('page_name','売上管理')
+
 @section('content_header')
 <h6 style="text-align: center;"><?php if (isset($member_name)){ echo $member_name->club_name;}else{echo '全て';}?></h6>
 @stop
+
 @section('content')
 
 
@@ -87,9 +92,10 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>日付</th>
+                            <th>日時</th>
                             <th>顧客名</th>
                             <th>売上</th>
+                            <th>支払い金額</th>
                             <th>支払いポイント</th>
                             <th>獲得ポイント</th>
                             <th></th>
@@ -100,8 +106,10 @@
                     <tbody>
                         @foreach($points as $point)
                         <tr>
+                        <td>{{ $point->created_at }}</td>
                             <td>{{ $point->club_name }}</td>
                             <td>{{ $point->sale }} 円</td>
+                            <td>{{ $point->pay_cash }} 円</td>
                             <td>{{ $point->pay_point }} pt</td>
                             <td>{{ $point->get_point }} pt</td>
 

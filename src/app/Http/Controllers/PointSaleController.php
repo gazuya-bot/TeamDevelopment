@@ -194,9 +194,10 @@ class PointSaleController extends Controller
         $point = Point_sale::find($id);
 
         $point->members_id = $request->members_id;
-        $point->sale = $sale-$pay_point;
+        $point->sale = $sale;
+        $point->pay_cash = $sale-$pay_point;
         $point->pay_point = $pay_point;
-        $point->get_point = floor(($sale - $pay_point)*0.01);
+        $point->get_point = ($sale - $pay_point)*0.01;
         $point->updated_at = $updated_at;
 
         // 更新する

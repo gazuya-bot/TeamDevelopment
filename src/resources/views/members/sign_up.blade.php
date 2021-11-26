@@ -1,14 +1,18 @@
 @extends('adminlte::page')
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 @section('title', '顧客一覧')
 =======
+=======
+>>>>>>> 52e2e99259e23098873fa3c5fadcc3fc2376dca6
 @section('css')
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{asset('css/matsumoto/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/matsumoto/style_M.css')}}">
+<<<<<<< HEAD
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -21,10 +25,16 @@
     <h1>新規登録</h1>
     <!-- <button class="btn btn-outline-primary" style="margin-left: 90%;"><a href="../HTML/sign-up.html">新規登録</a></button> -->
 </div>
+=======
+>>>>>>> 52e2e99259e23098873fa3c5fadcc3fc2376dca6
 @stop
 
+@section('title', '顧客新規登録')
+
+@section('page_name','顧客新規登録')
 
 @section('content')
+
 <!-- 登録フォーム -->
 <!-- <div class="content-wrapper"> -->
     <div class="container-fluid">

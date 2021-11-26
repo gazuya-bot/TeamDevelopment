@@ -237,46 +237,51 @@ return [
         ],
 
         [
+            'text' => 'home',
+            'url'  => '/home',
+            'icon' => 'nav-icon fas fa-clipboard',
+        ],
+        [
             'text' => 'uriage',
-            'url'  => 'admin/settings',
+            'url'  => '/inpoint',
+            'icon' => 'nav-icon fas fa-clipboard',
+        ],
+        [
+            'text' => 'uriage_kanri',
+            'url'  => '/sales_management',
             'icon' => 'nav-icon fas fa-clipboard',
         ],
         // [
-        //     'text' => 'uriage_kannri',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'nav-icon fas fa-clipboard-list',
+        //     'text'    => 'uriage_kanri',
+        //     'icon'    => 'fas fa-fw fa-share',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'level_one_00',
+        //             'url'  => '#',
+        //         ],
+        //         [
+        //             'text' => 'level_two_01',
+        //             'url'  => '#',
+        //         ],
+        //     ],
         // ],
-        [
-            'text'    => 'uriage-kanri',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one_00',
-                    'url'  => '#',
-                ],
-                [
-                    'text' => 'level_two_01',
-                    'url'  => '#',
-                ],
-            ],
-        ],
         [
             'text'    => 'hanbai_kanri',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
                     'text' => 'level_one_02',
-                    'url'  => '#',
+                    'url'  => '/members/sign_up',
                 ],
                 [
                     'text' => 'level_two_03',
-                    'url'  => '#',
+                    'url'  => '/members/memberlist',
                 ],
             ],
         ],
         [
             'text' => 'log_out',
-            'url'  => 'admin/settings',
+            'url'  => '/logout',
             'icon' => 'nav-icon fas fa-sign-out-alt',
         ],
     ],

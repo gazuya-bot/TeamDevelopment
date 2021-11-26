@@ -14,6 +14,7 @@ class Point_sale extends Model
         'date',
         'sale',
         'pay_point',
+        'pay_cash',
         'get_point',
         'updated_at'
     ];

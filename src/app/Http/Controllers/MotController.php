@@ -24,7 +24,7 @@ class MotController extends Controller
             $request->validate([
                 'members_id'=>'required',
                 'sale'=>'required|integer|numeric|gt:0',
-                'pay_point'=>'required|integer|numeric|gt:0|lte:sale',
+                'pay_point'=>'required|integer|numeric|lte:sale',
             ]);
 
             $members = $request->members_id;

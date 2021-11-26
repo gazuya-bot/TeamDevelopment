@@ -16,14 +16,29 @@ class MemberController extends Controller
     public function members(Request $request)
     {
         $members= DB::table('members_lists')->get();
+            $count = $members->count();
+            for ($i = 1; $i <= $count; $i++) {
+        $nsd[$i] = DB::table('members_lists')
+                ->join('points', 'members_lists.id', '=', 'points.members_id')
+                ->where('points.members_id', '=', $i)
+                ->select('points.created_at')
+                ->max('points.created_at');
+            }
+            // dd($nsd);
         return view('members/memberlist', [
             'members' => $members,
+            'nsd' => $nsd,
         ]);
-    }
-    //**新規登録 */
-    public function sign_up(Request $request)
-    {
-        return view('members/sign_up');
+
+    //     $members= DB::table('members_lists')->get();
+    //     return view('members/memberlist', [
+    //         'members' => $members,
+    //     ]);
+    // }
+    // //**新規登録 */
+    // public function sign_up(Request $request)
+    // {
+    //     return view('members/sign_up');
     }
     /**新規保存 */
     public function store(Request $request)

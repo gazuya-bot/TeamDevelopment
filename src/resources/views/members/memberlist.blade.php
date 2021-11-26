@@ -47,7 +47,7 @@
                                             {{ $member->club_name }}
                                         </td>
                                         <td>
-                                            {{ $member->created_at }}
+                                            {{ $nsd[$member->id] }}
                                         </td>
                                         <td>
                                             <button class="btn btn-outline-primary"><a href="{{ route('edit',['id'=>$member->id]) }}">{{ __('編集') }}</a></button>

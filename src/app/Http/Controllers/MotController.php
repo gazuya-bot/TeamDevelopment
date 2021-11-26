@@ -46,11 +46,11 @@ class MotController extends Controller
 
             $data = [
                 'members_id'=>$members_id,
-                'sale'=>$sale - $pay_point,
+                'sale'=>$sale,
+                'pay_cash'=>$sale - $pay_point,
                 'pay_point'=>$pay_point,
                 'get_point'=>($sale - $pay_point)*0.01,
                 'created_at'=>date('Y-m-d H:i:s')
-                // 'updated_at'=>date('Y-m-d H:i:s')
             ];
             Point::insert($data);
 

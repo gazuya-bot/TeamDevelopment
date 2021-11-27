@@ -47,15 +47,7 @@
                                             {{ $member->club_name }}
                                         </td>
                                         <td>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-                                            {{ $member->updated_at }}
-=======
                                             {{ $nsd[$member->id] }}
->>>>>>> Stashed changes
-=======
-                                            {{ $nsd[$member->id] }}
->>>>>>> 52e2e99259e23098873fa3c5fadcc3fc2376dca6
                                         </td>
                                         <td>
                                             <button class="btn btn-outline-primary"><a href="{{ route('edit',['id'=>$member->id]) }}">{{ __('編集') }}</a></button>

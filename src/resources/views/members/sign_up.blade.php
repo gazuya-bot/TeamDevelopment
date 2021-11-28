@@ -16,12 +16,17 @@
 
 @section('page_name','顧客新規登録')
 
+<!-- フラッシュメッセージ -->
+    @if (session('flash_message'))
+        $(function () {
+                toastr.success('{{ session('flash_message') }}');
+        });
+    @endif
+
 @section('content')
 
 <!-- 登録フォーム -->
-<!-- <div class="content-wrapper"> -->
     <div class="container-fluid">
-        <!-- <div class="row"> -->
             <div class="card card-primary">
                 <section class="content">
                     <div class="col-12">
@@ -98,29 +103,26 @@
                                     </div>
                                 </div>
                             </div>
-                        <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-outline-secondary float-right"><a href="{{ route('memberlist') }}">{{ __('キャンセル') }}</a></button>
                                 <button type="submit" class="btn btn-outline-primary">登録</button>  
                             </div>
-                    <!-- /.card-footer -->
                         </form>
                         </div>
                     </div>                                     
                 </section>
             </div> 
-        <!-- </div> -->
     </div>
-<!-- </div> -->
 
-<!-- フラッシュメッセージ -->
-<script>
-    @if (session('flash_message'))
-        $(function () {
-                toastr.success('{{ session('flash_message') }}');
-        });
-    @endif
-</script>
+
+    <!-- フラッシュメッセージ -->
+    <script>
+            @if (session('flash_message'))
+                $(function () {
+                        toastr.success('{{ session('flash_message') }}');
+                });
+            @endif
+        </script>
 @stop
 
 @section('css')

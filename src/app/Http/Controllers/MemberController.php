@@ -88,8 +88,9 @@ class MemberController extends Controller
         $member->save();
 
 
-        \Session::flash('err_msg', '顧客情報を登録しました！');
-        return redirect()->route('memberlist');
+        // Session()->flash('flash_message', '顧客情報を登録しました！');
+        // return redirect()->route('memberlist');
+        return redirect('memberlist')->with('flash_message', '登録が完了しました');
 
     }
 

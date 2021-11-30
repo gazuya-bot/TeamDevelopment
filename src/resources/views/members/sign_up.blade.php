@@ -6,18 +6,27 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{asset('css/matsumoto/adminlte.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/matsumoto/style_M.css')}}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 @stop
 
 @section('title', '顧客新規登録')
 
 @section('page_name','顧客新規登録')
 
+<!-- フラッシュメッセージ -->
+    @if (session('flash_message'))
+        $(function () {
+                toastr.success('{{ session('flash_message') }}');
+        });
+    @endif
+
 @section('content')
 
 <!-- 登録フォーム -->
-<!-- <div class="content-wrapper"> -->
     <div class="container-fluid">
-        <!-- <div class="row"> -->
             <div class="card card-primary">
                 <section class="content">
                     <div class="col-12">
@@ -32,7 +41,7 @@
                                         <input type="text" class="form-control" name="club_name" id="inputclubname" placeholder="学校名 / 部活名" value="{{ old('club_name') }}">
 
                                         @error('club_name')
-                                        {{ $message}}
+                                        <p class="error_message" style="color:red">{{ $message}}</p>
                                         @enderror
 
                                     </div>
@@ -43,7 +52,7 @@
                                         <input type="email" class="form-control" name="email" id="inputemail" placeholder="メールアドレス" value="{{ old('tel')}}">
 
                                         @error('email')
-                                        {{ $message}}
+                                        <p class="error_message" style="color:red">{{ $message}}</p>
                                         @enderror
 
                                     </div>
@@ -54,7 +63,7 @@
                                         <input type="text" class="form-control" name="address" id="inputaddress" placeholder="住所" value="{{ old('address') }}">
 
                                         @error('address')
-                                        {{ $message}}
+                                        <p class="error_message" style="color:red">{{ $message}}</p>
                                         @enderror
 
                                     </div>
@@ -65,7 +74,7 @@
                                         <input type="text" class="form-control" name="name" id="inputname" placeholder="名前" value="{{ old('name') }}">
 
                                         @error('name')
-                                        {{ $message}}
+                                        <p class="error_message" style="color:red">{{ $message}}</p>
                                         @enderror
 
                                     </div>
@@ -76,7 +85,7 @@
                                         <input type="tel" class="form-control" name="tel" id="inputtel" placeholder="連絡先" value="{{ old('tel') }}">
 
                                         @error('tel')
-                                        {{ $message}}
+                                        <p class="error_message" style="color:red">{{ $message}}</p>
                                         @enderror
 
                                     </div>
@@ -94,20 +103,26 @@
                                     </div>
                                 </div>
                             </div>
-                        <!-- /.card-body -->
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-outline-secondary float-right"><a href="{{ route('memberlist') }}">{{ __('キャンセル') }}</a></button>
                                 <button type="submit" class="btn btn-outline-primary">登録</button>  
                             </div>
-                    <!-- /.card-footer -->
                         </form>
                         </div>
                     </div>                                     
                 </section>
             </div> 
-        <!-- </div> -->
     </div>
-<!-- </div> -->
+
+
+    <!-- フラッシュメッセージ -->
+    <script>
+            @if (session('flash_message'))
+                $(function () {
+                        toastr.success('{{ session('flash_message') }}');
+                });
+            @endif
+        </script>
 @stop
 
 @section('css')

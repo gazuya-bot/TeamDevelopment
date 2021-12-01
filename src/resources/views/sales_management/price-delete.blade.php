@@ -51,7 +51,7 @@
                 <div class="card-footer">
                     <form action="{{route('delete_price', $point->id)}}" method="POST">
                     @csrf
-                    <button type="submit" class="btn btn-outline-danger float-left">削除</button>
+                    <button type="submit"  class="btn btn-outline-danger float-left" onclick="return confirm('削除します！')">削除</button>
                     <a href="{{ route('show_analysis') }}">
                     <button type="button" class="btn btn-outline-secondary float-right">キャンセル</button>
                     </a>

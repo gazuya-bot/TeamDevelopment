@@ -22,7 +22,7 @@
 
 <!-- モーダルウィンドウの中身 -->
 
-@if(Session::has('flashmessage'))
+<!-- @if(Session::has('flashmessage'))
 <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -44,7 +44,7 @@
         $('#Modal').modal('show');
     });
 </script>
-@endif
+@endif -->
 
 
 

@@ -7,7 +7,7 @@
     <!-- <div class="row justify-content-center"> -->
         <!-- <div class="col-md-8"> -->
             <div class="login-logo">
-                <img src="{{asset('img/mot_01.gif')}}" alt="ロゴ">
+                <img src="{{asset('img/MOT_01.gif')}}" alt="ロゴ">
                 <p><b>会員登録</b></p>
             </div>
 

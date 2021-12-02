@@ -16,13 +16,6 @@
 
 @section('page_name','顧客新規登録')
 
-<!-- フラッシュメッセージ -->
-    @if (session('flash_message'))
-        $(function () {
-                toastr.success('{{ session('flash_message') }}');
-        });
-    @endif
-
 @section('content')
 
 <!-- 登録フォーム -->
@@ -49,7 +42,7 @@
                                 <div class="form-group row">
                                     <label for="inputemail" class="col-sm-2 col-form-label">メールアドレス</label>
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" name="email" id="inputemail" placeholder="メールアドレス" value="{{ old('tel')}}">
+                                        <input type="email" class="form-control" name="email" id="inputemail" placeholder="メールアドレス" value="{{ old('email')}}">
 
                                         @error('email')
                                         <p class="error_message" style="color:red">{{ $message}}</p>
@@ -122,7 +115,7 @@
                         toastr.success('{{ session('flash_message') }}');
                 });
             @endif
-        </script>
+    </script>
 @stop
 
 @section('css')

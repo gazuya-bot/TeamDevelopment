@@ -82,7 +82,7 @@
                         </div> -->
 
                         <!-- 会員登録 -->
-                        <div class="col-12 form-check">
+                        <div class="col-12 form-check login-back">
                             @guest
                                 @if (Route::has('register'))
                                         <a class="nav-link new_member" href="{{ route('register') }}">{{ __('会員登録はこちら!') }}</a>

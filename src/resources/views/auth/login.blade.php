@@ -88,8 +88,8 @@
                                         <a class="nav-link new_member" href="{{ route('register') }}">{{ __('会員登録はこちら!') }}</a>
                                 @endif
                             @else
-                                <li class="nav-item dropdown" style="list-style: none;>
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <!-- <li class="nav-item dropdown" style="list-style: none;> -->
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('home') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         {{ Auth::user()->name }}
                                     </a>
 
@@ -104,7 +104,7 @@
                                             @csrf
                                         </form>
                                     </div>
-                                </li>
+                                <!-- </li> -->
                             @endguest
                         </div>
                     </div>

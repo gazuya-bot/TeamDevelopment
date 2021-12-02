@@ -104,6 +104,12 @@
                                 </button>
                             </div>
                         </div>
+
+                        <!-- 会員登録 -->
+                        <div class="login-back">
+                            <a class="nav-link new_member" href="{{ route('login') }}">{{ __('ログイン画面へ戻る') }}</a>
+                        </div>
+
                     </form>
                 </div>
             </div>

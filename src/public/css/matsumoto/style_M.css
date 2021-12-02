@@ -113,3 +113,8 @@ b, strong {
 .card-footer:last-child {
     background-color: #fff;
 }
+
+.login-back{
+    text-align: center;
+    margin-top:20px
+}

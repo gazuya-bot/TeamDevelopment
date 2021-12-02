@@ -15,20 +15,27 @@ class MemberController extends Controller
     //**顧客一覧 */
     public function members(Request $request)
     {
-        $members= DB::table('members_lists')->get();
-            $count = $members->count();
-            for ($i = 1; $i <= $count; $i++) {
-        $nsd[$i] = DB::table('members_lists')
-                ->join('points', 'members_lists.id', '=', 'points.members_id')
-                ->where('points.members_id', '=', $i)
-                ->select('points.created_at')
-                ->max('points.created_at');
-            }  
-            // dd($nsd);   
+        // $members= DB::table('members_lists')->get();
+            
+        // $nsd = DB::table('members_lists')
+        //         ->join('points', 'members_lists.id', '=', 'points.members_id')
+        //         ->select ('members_lists.id', 'points.created_at')
+        //         ->max('points.created_at');
+          
+        // return view('members/memberlist', [
+        //     'members' => $members,
+        //     'nsd' => $nsd,
+        // ]);
+        $members = DB::table('members_lists')
+            ->leftJoin('points', 'members_lists.id', '=', 'points.members_id')
+            ->groupBy('members_lists.id')
+            ->orderBy('members_lists.id')
+            ->select('members_lists.id', 'members_lists.club_name', DB::raw('MAX(points.created_at) as created_at'))
+            ->get();
         return view('members/memberlist', [
-            'members' => $members,
-            'nsd' => $nsd,
+            'members' => $members
         ]);
+
     }
 
 
@@ -63,34 +70,9 @@ class MemberController extends Controller
         $member->fax = $fax;
         $member->memo = $memo;
 
-        // $inputs = $request->all();
-
-        // $this->validate($request,[
-        //     'club_name'=>'required|max:64',
-        //     'email'=>'required|max:254',
-        //     'address'=>'required|max:64',
-        //     'name'=>'required|max:64',
-        //     'tel'=>'required|max:11',
-        // ]);
-        
-        // Member::store([
-        //     'user_id'=>0,
-        //     'club_name'=>$request->club_name,
-        //     'email'=>$request->email,
-        //     'address'=>$request->address,
-        //     'name'=>$request->name,
-        //     'tel'=>$request->tel,
-        //     'fax'=>$request->fax,
-        //     'memo'=>$request->memo,
-        // ]);
-        // dd($member);
-
         $member->save();
 
-
-        // Session()->flash('flash_message', '顧客情報を登録しました！');
-        // return redirect()->route('memberlist');
-        return redirect('memberlist')->with('flash_message', '登録が完了しました');
+        return redirect('members/memberlist')->with('flash_message', '登録が完了しました');
 
     }
 

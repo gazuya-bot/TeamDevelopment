@@ -67,7 +67,7 @@
     });
 
     $('#delete').click(function(){
-        if(!confirm('削除します！')){
+        if(!confirm('削除します？')){
         /* キャンセルの時の処理 */
             return false;
         }else{

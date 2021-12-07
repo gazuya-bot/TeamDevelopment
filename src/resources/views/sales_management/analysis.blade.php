@@ -171,6 +171,7 @@
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
+            "order": [[ 0, "desc" ]] ,
             'language': {
                 'url': "https://cdn.datatables.net/plug-ins/3cfcc339e89/i18n/Japanese.json"
             },

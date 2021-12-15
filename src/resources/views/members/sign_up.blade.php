@@ -97,8 +97,8 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-outline-secondary float-right"><a href="{{ route('memberlist') }}">{{ __('キャンセル') }}</a></button>
-                                <button type="submit" class="btn btn-outline-primary">登録</button>  
+                                <button type="submit" class="btn btn-outline-primary float-right">登録</button> 
+                                <button type="submit" class="btn btn-outline-secondary"><a href="{{ route('memberlist') }}">{{ __('キャンセル') }}</a></button> 
                             </div>
                         </form>
                         </div>

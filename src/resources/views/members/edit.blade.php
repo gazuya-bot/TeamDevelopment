@@ -17,9 +17,7 @@
 
 @section('content')
 <!-- 編集フォーム -->
-<!-- <div class="content-wrapper"> -->
     <div class="container-fluid">
-        <!-- <div class="row"> -->
             <div class="card card-primary">
                 <section class="content">
                     <div class="col-12">
@@ -98,8 +96,8 @@
                                 </div>
                             <!-- /.card-body -->
                                 <div class="card-footer">
-                                    <button type="submit" class="btn btn-outline-primary">更新</button>
-                                    <button id="delete" type="submit" class="btn btn-outline-danger float-right"><a href="{{ route('delete', ['id'=>$member->id]) }}">削除</a></button>
+                                    <button type="submit" class="btn btn-outline-primary float-right">更新</button>
+                                    <button id="delete" type="submit" class="btn btn-outline-danger"><a href="{{ route('delete', ['id'=>$member->id]) }}">削除</a></button>
                                     <button type="submit" class="btn btn-outline-secondary float-right"><a href="{{ route('detail', ['id'=>$member->id]) }}">キャンセル</a></button>
                                 </div>
                         <!-- /.card-footer -->

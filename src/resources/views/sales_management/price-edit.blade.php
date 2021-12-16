@@ -55,9 +55,9 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-outline-primary float-left">変更</button>
+                    <button type="submit" class="btn btn-outline-primary float-right">変更</button>
                     <a href="{{ route('show_analysis') }}">
-                    <button type="button" class="btn btn-outline-secondary float-right">キャンセル</button>
+                    <button type="button" class="btn btn-outline-secondary float-left">キャンセル</button>
                     </a>
                 </div>
 

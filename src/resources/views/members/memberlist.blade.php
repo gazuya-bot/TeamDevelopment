@@ -17,54 +17,49 @@
 
 @section('content')
     <!-- 顧客一覧 -->
-<!-- <div class="content-wrapper"> -->
     <div class="container-fluid">
-        <!-- <div class="row"> -->
-            <div class="card card-primary">
-                <section class="content">
-                    <div class="col-12">
-                        <div class="card-body">
+        <div class="card card-primary">
+            <section class="content">
+                <div class="col-12">
+                <button class="btn btn-outline-primary float-right" style="position: relative; bottom: -15px;"><a href="{{ route('sign_up') }}">{{ __('新規登録') }}</a></button>
+                    <div class="card-body">
                         <table id="example1" class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>学校名 / 部活名</th>
-                                        <th>最終購入日</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($members as $member)
-                                    
-                                    <tr data-href="{{ route('detail', ['id'=>$member->id]) }}">
-                                    
-                                        <td>
-                                            <a href="{{ route('detail', ['id'=>$member->id]) }}">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>学校名 / 部活名</th>
+                                    <th>最終購入日</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($members as $member)
+                                <tr data-href="{{ route('detail', ['id'=>$member->id]) }}">
+                                    <td>
+                                        <a href="{{ route('detail', ['id'=>$member->id]) }}">
                                             {{ $member->id }}
-                                            </a>
-                                        </td>
-                                        <td>
-                                            {{ $member->club_name }}
-                                        </td>
-                                        <td>
-                                            {{ $member->created_at }}
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-outline-primary"><a href="{{ route('edit',['id'=>$member->id]) }}">{{ __('編集') }}</a></button>
-                                            <button class="btn btn-outline-danger"><a href="{{ route('delete',['id'=>$member->id]) }}">{{ __('削除') }}</a></button>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>            
-                    </div>                           
-                </section>
-            </div> 
-        <!-- </div> -->
+                                        </a>
+                                    </td>
+                                    <td>
+                                        {{ $member->club_name }}
+                                    </td>
+                                    <td>
+                                        {{ $member->created_at }}
+                                    </td>
+                                    <td>
+                                        <button class="btn btn-outline-primary"><a href="{{ route('edit',['id'=>$member->id]) }}">{{ __('編集') }}</a></button>
+                                        <button class="btn btn-outline-danger"><a href="{{ route('delete',['id'=>$member->id]) }}">{{ __('削除') }}</a></button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>            
+                </div>                           
+            </section>
+        </div> 
     </div>
-<!-- </div> -->
 @stop
 
 @section('css')

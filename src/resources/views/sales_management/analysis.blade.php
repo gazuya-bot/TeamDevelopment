@@ -80,7 +80,7 @@
             <div class="card-body">
                 <div class="dropdown">
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                        選択してください
+                        絞り込み
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{{url('/sales_management')}}" aria-selected="true">全て</a>
